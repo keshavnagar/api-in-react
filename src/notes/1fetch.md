@@ -9,3 +9,5 @@
 8. and jab render hoga to fetch method fir se chalega aur jab vo firse chalega to jo andar ki state hai vo firse chalegi
 9. aur jab state firse chalegi to firse fetch method chalegi and ye cycle infinetly chalti hee jayegi
 10. so itna to clear ho gaya hai ki ham is prakar se to api ko fetch nahi karenge
+11. so the differenc when we store fatch data in state without use effect cause the problem there 
+12. suppose we remove the state or set the state and store the data in the state the fetch medhod alone writtern there so that is working fine in console and network tab both we also see this in screenshots: [console](2withoutApiDataStoreInState.png) [network tab](3withoutApiDataStoreInState.png)
