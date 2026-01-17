@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 const App = () => {
   const [apiData, setApiData] = useState([]);
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/posts")
+    fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
       .then((res) => res.json())
-      .then((data) => setApiData(data))
+      .then((data) => console.log(data))
       .catch((err) => console.log(err));
   }, []);
   return (
