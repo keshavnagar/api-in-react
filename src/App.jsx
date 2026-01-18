@@ -1,19 +1,20 @@
 import { useEffect, useState } from "react";
-
 const App = () => {
-  const [apiData, setApiData] = useState([]);
-  useEffect(() => {
-    fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
+  const [apiData, setApiData] = useState(null); 
+  const API = "https://pokeapi.co/api/v2/pokemon/pikachu";
+  const fatchPokemon = () => (
+    fetch(API)
       .then((res) => res.json())
-      .then((data) => console.log(data))
-      .catch((err) => console.log(err));
+      .then((data) => setApiData(data))
+      .catch((err) => console.log(err))
+  )
+  useEffect(() => {
+    fatchPokemon();
   }, []);
   return (
-    <>
-      {apiData.map((currData) => (
-        <li key={currData.id}>#{currData.body}</li>
-      ))}
-    </>
+    <ul>
+     <h1>{apiData.}</h1>
+    </ul>
   );
 };
 export default App;
