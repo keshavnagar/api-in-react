@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 const App = () => {
-  const [apiData, setApiData] = useState(null); 
+  const [apiData, setApiData] = useState(null);
   const API = "https://pokeapi.co/api/v2/pokemon/pikachu";
   const fatchPokemon = () => (
     fetch(API)
@@ -11,9 +11,13 @@ const App = () => {
   useEffect(() => {
     fatchPokemon();
   }, []);
+
+  if (!apiData)
+    return <h1> Loading......</h1>
   return (
     <ul>
-     <h1>{apiData.}</h1>
+      <h1>{apiData.name}</h1>
+      <h2>{apiData.order}</h2>
     </ul>
   );
 };
