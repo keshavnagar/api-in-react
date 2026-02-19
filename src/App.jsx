@@ -12,6 +12,8 @@ const App = () => {
     fatchPokemon();
   }, []);
 
+  console.log(apiData)
+
   if (!apiData)
     return <h1> Loading......</h1>
   return (
