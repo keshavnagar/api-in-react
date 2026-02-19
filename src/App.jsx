@@ -20,6 +20,7 @@ const App = () => {
     <ul>
       <h1>{apiData.name}</h1>
       <h2>{apiData.order}</h2>
+      <img src={apiData.sprites.other.dream_world.front_default} alt="pokemon" />
     </ul>
   );
 };
