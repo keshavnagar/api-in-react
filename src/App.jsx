@@ -3,7 +3,7 @@ const App = () => {
   const [apiData, setApiData] = useState(null);
   const [loading, setLoading] = useState(true)
   const [err, setErr] = useState(null)
-  const API = "https://pokeapi.co/api/v2/pokemon/pikachu";
+  const API = "https://pokeapi.co/api/v2/pokemons/pikachu";
   const fatchPokemon = () => (
     fetch(API)
       .then((res) => res.json())
