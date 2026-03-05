@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import './App.css';
 const App = () => {
   const [apiData, setApiData] = useState(null);
   const [loading, setLoading] = useState(true)
@@ -11,7 +12,7 @@ const App = () => {
       .catch((err) => { console.log(err); setErr(err); setLoading(false) })
   )
   useEffect(() => {
-    fatchPokemon();
+    fatchPokemon(); 
   }, []);
 
   if (loading)
