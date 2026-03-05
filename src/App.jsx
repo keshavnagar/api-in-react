@@ -5,14 +5,25 @@ const App = () => {
   const [loading, setLoading] = useState(true)
   const [err, setErr] = useState(null)
   const API = "https://pokeapi.co/api/v2/pokemon/pikachu";
-  const fatchPokemon = () => (
-    fetch(API)
-      .then((res) => res.json())
-      .then((data) => { setApiData(data); setLoading(false) })
-      .catch((err) => { console.log(err); setErr(err); setLoading(false) })
-  )
+  // const fatchPokemon = () => (
+  //   fetch(API)
+  //     .then((res) => res.json())
+  //     .then((data) => { setApiData(data); setLoading(false) })
+  //     .catch((err) => { console.log(err); setErr(err); setLoading(false) })
+  // )
+  const fatchPokemon = async () => {
+    try {
+      const res = await fetch(API);
+      const data = await res.json();
+      setApiData(data)
+      setLoading(false)
+    } catch (err) {
+      setErr(err);
+      setLoading(false);
+    }
+  }
   useEffect(() => {
-    fatchPokemon(); 
+    fatchPokemon();
   }, []);
 
   if (loading)
